@@ -43,7 +43,9 @@ int main() {
 				break;
 			default:
 				// akcja dla procesu macierzystego
-				wait(&stat_loc);
+				if(wait(&stat_loc) == -1) {
+					perror("wait error");
+				}
 
 		}
 	}

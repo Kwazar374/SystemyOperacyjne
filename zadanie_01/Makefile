@@ -21,10 +21,10 @@ EXEC_D = $(NAME_D).x
 EXEC_E = $(NAME_E).x
 # Object file
 OBJS_A = $(NAME_A).o
-OBJS_A = $(NAME_A).o
-OBJS_A = $(NAME_A).o
-OBJS_A = $(NAME_A).o
-OBJS_A = $(NAME_A).o
+OBJS_B = $(NAME_B).o
+OBJS_C = $(NAME_C).o
+OBJS_D = $(NAME_D).o
+OBJS_E = $(NAME_E).o
 
 # opcje kompilatora i linkera
 CFLAGS = -Wall -std=c99 -pedantic -O

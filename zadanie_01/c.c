@@ -13,7 +13,7 @@ int main() {
 	pid_t PGID = getpgid(PID);
 	
 	printf("proces macierzysty:\n");
-	printf("UID: %d / GID: %d / PID: %d / PPID %d / PGID %d\n\n",
+	printf("UID: %d / GID: %d / PID: %d / PPID: %d / PGID: %d\n\n",
 			UID, GID, PID, PPID, PGID);
 
 	for (int i = 0; i < 3; ++i) {
@@ -33,7 +33,7 @@ int main() {
 				PPID = getppid();
 				PGID = getpgid(PID);
 
-				printf("(%d) / UID: %d / GID: %d / PID: %d / PPID %d / PGID %d\n",
+				printf("(%d) / UID: %d / GID: %d / PID: %d / PPID: %d / PGID: %d\n",
 				i, UID, GID, PID, PPID, PGID);
 				break;
 			default:

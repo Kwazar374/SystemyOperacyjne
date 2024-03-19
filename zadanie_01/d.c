@@ -6,8 +6,6 @@
 #include <unistd.h>
 
 int main() {
-	int stat_loc = 0;
-	
 	uid_t UID = getuid();
 	gid_t GID = getgid();
 	pid_t PID = getpid();
@@ -17,8 +15,6 @@ int main() {
 	printf("proces macierzysty:\n");
 	printf("UID: %d / GID: %d / PID: %d / PPID: %d / PGID: %d\n\n",
 			UID, GID, PID, PPID, PGID);
-
-	printf("procesy potomne:\n");
 
 	for (int i = 0; i < 3; ++i) {
 		switch (fork())
@@ -36,12 +32,17 @@ int main() {
 
 				printf("(%d) / UID: %d / GID: %d / PID: %d / PPID: %d / PGID: %d\n",
 				i, UID, GID, PID, PPID, PGID);
+					
+				sleep(1);	
+
 				break;
 			default:
 				// akcja dla procesu macierzystego
-				wait(&stat_loc);
+				break;
 
 		}
 	}
+	sleep(4);
+
 	return 0;
 }

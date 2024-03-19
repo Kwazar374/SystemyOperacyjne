@@ -8,11 +8,23 @@ DIR = $(notdir $(CURDIR))
 SYSNAME = $(shell uname -s)
 
 # Nazwy, tu: rdzenie nazw plikow
-NAME_TEST = test
+NAME_A = a
+NAME_B = b
+NAME_C = c
+NAME_D = d
+NAME_E = e
 # Program wykonawczy
-EXEC_TEST = $(NAME_TEST).x
+EXEC_A = $(NAME_A).x
+EXEC_B = $(NAME_B).x
+EXEC_C = $(NAME_C).x
+EXEC_D = $(NAME_D).x
+EXEC_E = $(NAME_E).x
 # Object file
-OBJS_TEST = $(NAME_TEST).o
+OBJS_A = $(NAME_A).o
+OBJS_A = $(NAME_A).o
+OBJS_A = $(NAME_A).o
+OBJS_A = $(NAME_A).o
+OBJS_A = $(NAME_A).o
 
 # opcje kompilatora i linkera
 CFLAGS = -Wall -std=c99 -pedantic -O
@@ -23,10 +35,7 @@ CO = gcc
 LD = $(CO)
 
 # regula wzorcowa, mowiaca jak otrzymac plik
-# z rozszerzeniem .o z plikow .c oraz .h
-%.o: %.c %.h
-	$(CO) $(CFLAGS) -c $<
-
+# z rozszerzeniem .o z plikow .c
 %.o: %.c
 	$(CO) $(CFLAGS) -c $<
 
@@ -34,20 +43,47 @@ LD = $(CO)
 # o takiej samej nazwie jak nazwa reguly
 .PHONY: all
 # regula:
-all: $(EXEC_TEST)
+all: $(EXEC_A) $(EXEC_B) $(EXEC_C) $(EXEC_D) $(EXEC_E)
 
 # jawna regula zaleznosci: najpierw uaktualnij
 # pliki po prawej stronie dwukropka, a potem
 # wykonaj komene, ktora jest w nastepnej linijce
 # (tutaj linkowanie)
-$(EXEC_TEST) : $(OBJS_TEST) $(LIBS_TEST)
+$(EXEC_A) : $(OBJS_A) $(LIBS_A)
 	$(LD) -o $@ $(LFLAGS) $^
 
-.PHONY: run_test
+$(EXEC_B) : $(OBJS_B) $(LIBS_B)
+	$(LD) -o $@ $(LFLAGS) $^
+
+$(EXEC_C) : $(OBJS_C) $(LIBS_C)
+	$(LD) -o $@ $(LFLAGS) $^
+
+$(EXEC_D) : $(OBJS_D) $(LIBS_D)
+	$(LD) -o $@ $(LFLAGS) $^
+
+$(EXEC_E) : $(OBJS_E) $(LIBS_E)
+	$(LD) -o $@ $(LFLAGS) $^
+
+.PHONY: run_a run_b run_c run_d run_e
 # uruchom program $(EXEC_TEST); najpierw sprawdz, czy kod
 # wykonawczy jest aktualny
 run_test: $(EXEC_TEST)
 	./$(EXEC_TEST)
+
+run_a: $(EXEC_A)
+	./$(EXEC_A)
+	
+run_b: $(EXEC_B)
+	./$(EXEC_B)
+
+run_c: $(EXEC_C)
+	./$(EXEC_C)
+
+run_d: $(EXEC_D)
+	./$(EXEC_D)
+
+run_e: $(EXEC_E)
+	./$(EXEC_E)
 
 # sprzatanie
 .PHONY: clean tar

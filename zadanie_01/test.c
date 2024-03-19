@@ -2,6 +2,6 @@
 
 int main()
 {
-	printf("Program testowy dziala poprawnie");
+	printf("Program testowy dziala poprawnie\n");
 	return 0;
 }

@@ -1,6 +1,6 @@
-# CWICZENIE 1: PROCESY POTOMNE: FORK
+# ĆWICZENIE 1: PROCESY POTOMNE: FORK
 
-## Tresc Zadania
+## Treść Zadania
 
 ### A
 

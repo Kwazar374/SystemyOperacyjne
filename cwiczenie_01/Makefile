@@ -1,4 +1,4 @@
-# rozszerzenia w nazwach plikow
+# Rozszerzenia w nazwach plikow
 .SUFFIXES: .c .o .x .h
 
 # DIR = nazwa katalogu, w ktorym znajduje sie makefile
@@ -26,28 +26,28 @@ OBJS_C = $(NAME_C).o
 OBJS_D = $(NAME_D).o
 OBJS_E = $(NAME_E).o
 
-# opcje kompilatora i linkera
+# Opcje kompilatora i linkera
 CFLAGS = -Wall -std=c99 -pedantic -O
 LFLAGS = -Wall -std=c99 -pedantic -O
 
-# kompilator i linker
+# Kompilator i linker
 CO = gcc
 LD = $(CO)
 
-# regula wzorcowa, mowiaca jak otrzymac plik
+# Regula wzorcowa, mowiaca jak otrzymac plik
 # z rozszerzeniem .o z plikow .c
 %.o: %.c
 	$(CO) $(CFLAGS) -c $<
 
-# zabezpieczenie przed omylkowym wywowalniem pliku
+# Zabezpieczenie przed omylkowym wywowalniem pliku
 # o takiej samej nazwie jak nazwa reguly
 .PHONY: all
 # regula:
 all: $(EXEC_A) $(EXEC_B) $(EXEC_C) $(EXEC_D) $(EXEC_E)
 
-# jawna regula zaleznosci: najpierw uaktualnij
+# Jawna regula zaleznosci: najpierw uaktualnij
 # pliki po prawej stronie dwukropka, a potem
-# wykonaj komene, ktora jest w nastepnej linijce
+# wykonaj komende, ktora jest w nastepnej linijce
 # (tutaj linkowanie)
 $(EXEC_A) : $(OBJS_A) $(LIBS_A)
 	$(LD) -o $@ $(LFLAGS) $^
@@ -65,7 +65,7 @@ $(EXEC_E) : $(OBJS_E) $(LIBS_E)
 	$(LD) -o $@ $(LFLAGS) $^
 
 .PHONY: run_a run_b run_c run_d run_e
-# uruchom program $(EXEC_TEST); najpierw sprawdz, czy kod
+# Uruchom program $(EXEC_TEST); najpierw sprawdz, czy kod
 # wykonawczy jest aktualny
 run_test: $(EXEC_TEST)
 	./$(EXEC_TEST)
@@ -85,12 +85,12 @@ run_d: $(EXEC_D)
 run_e: $(EXEC_E)
 	./$(EXEC_E)
 
-# sprzatanie
+# Sprzatanie
 .PHONY: clean tar
 clean:
 	rm -f *.o *~ *.a *.so *x core core* a.out; rm -rf ${LIB_DIR}
 
-# archiwizacja
+# Archiwizacja
 tar: clean
 	(cd ../; tar -cvzf $(DIR).tar.gz $(DIR) )
 

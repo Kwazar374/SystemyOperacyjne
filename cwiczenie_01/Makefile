@@ -88,7 +88,7 @@ run_e: $(EXEC_E)
 # Sprzatanie
 .PHONY: clean tar
 clean:
-	rm -f *.o *~ *.a *.so *x core core* a.out; rm -rf ${LIB_DIR}
+	rm -f *.o *~ *.a *.so *.x core core* a.out; rm -rf ${LIB_DIR}
 
 # Archiwizacja
 tar: clean

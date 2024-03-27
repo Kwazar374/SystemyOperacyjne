@@ -10,10 +10,13 @@ SYSNAME = $(shell uname -s)
 # Nazwy
 # Rdzenie nazw plikow
 NAME_CW2 = CW2
+NAME_WYP = funkcja_wypisujaca
 # Program wykonawczy
 EXEC_CW2 = $(NAME_CW2).x
+EXEC_WYP = $(NAME_WYP).x
 # Object file
 OBJS_CW2 = $(NAME_CW2).o
+OBJS_WYP = $(NAME_WYP).o
 
 # opcje kompilatora i linkera
 CFLAGS = -Wall -std=c99 -pedantic -O
@@ -32,7 +35,7 @@ LD = $(CO)
 # o takiej samej nazwie jak nazwa reguly
 .PHONY: all
 # Regula
-all: $(EXEC_CW2)
+all: $(EXEC_CW2) $(EXEC_WYP)
 
 # Jawna regula zaleznosci: najpierw uaktualnij
 # pliki po prawej stronie dwukropka, a potem
@@ -41,11 +44,17 @@ all: $(EXEC_CW2)
 $(EXEC_CW2) : $(OBJS_CW2) $(LIBS_CW2)
 	$(LD) -o $@ $(LFLAGS) $^
 
-.PHONY: run_cw2
+$(EXEC_WYP) : $(OBJS_WYP) $(LIBS_WYP)
+	$(LD) -o $@ (LFLAGS) $^
+
+.PHONY: run_cw2 run_wyp
 # Uruchom program $(EXEC_CW2); najpierw sprawdz, czy kod
 # wykonawczy jest aktualny
-run_test: $(EXEC_TEST)
+run_cw2: $(EXEC_TEST)
 	./$(EXEC_TEST)
+
+run_wyp: $(EXEC_WYP)
+	./$(EXEC_WYP)
 
 # Sprzatanie
 .PHONY: clean tar

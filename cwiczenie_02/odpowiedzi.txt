@@ -1,0 +1,9 @@
+Odpowiedzi do cwiczenia 2 --------------------------------------------------------------------
+
+	Przy n-krotnym wywolaniu funkcji fork-exec powstanie n procesow potomnych.
+	Wynika to z faktu, ze exec zastepuje aktualny obraz procesu innym (w tym przypadku
+	obrazem procesu wypisujacego informacje na temat procesu na ekranie), dlatego
+	petla wykona sie tylko w procesie macierzystym, a procesach potomnych zostanie
+	wywolana tylko funkcja wypisujaca.
+
+----------------------------------------------------------------------------------------------

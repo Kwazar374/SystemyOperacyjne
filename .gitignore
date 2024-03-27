@@ -1,2 +1,5 @@
-# ignore tar.gz files
+# pliki z tymi rozszerzenianiami
+# maja zostac zignorowane
 *.tar.gz
+*.o
+*.x

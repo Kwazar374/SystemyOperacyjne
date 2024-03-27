@@ -15,7 +15,10 @@ int main(int argc, char *argv[]) {
 				exit(1);
 			case 0:
 				// akcja dla procesu potomnego
-				execl(argv[1], argv[1], NULL);
+				if(!execl(argv[1], argv[1], NULL)) {
+					perror("execl error");
+					exit(1);
+				}
 
 				break;
 			default:
@@ -29,5 +32,8 @@ int main(int argc, char *argv[]) {
 	}
 	
 	printf("\nProces macierzysty:\n");
-	execl(argv[1], argv[1], NULL);
+	if(!execl(argv[1], argv[1], NULL)) {
+		perror("execl error");
+		exit(1);
+	}
 }

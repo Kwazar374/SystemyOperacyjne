@@ -1,5 +1,5 @@
 # pliki z tymi rozszerzenianiami
 # maja zostac zignorowane
-# *.tar.gz
+*.tar.gz
 *.o
 *.x

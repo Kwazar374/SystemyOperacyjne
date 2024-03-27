@@ -2,6 +2,10 @@
 #include <unistd.h>
 #include <sys/types.h>
 
+// Autor: Bartosz Satola
+// Rozwiazania zadan z przemiotu Systemy Operacyjne na 27.03.2024
+// Szczegoly w pliku README.md
+
 int main()
 {
 	uid_t UID = getuid();

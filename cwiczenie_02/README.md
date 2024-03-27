@@ -2,7 +2,7 @@
 
 ## Treść Zadania
 
-Zmodyfikować program z ćwiczenia 1b tak, aby komunikaty procesów potomnych były wypisywane przez program uruchamiany przez funkcję **execl**.
+Zmodyfikować program z ćwiczenia 1b tak, aby komunikaty procesów potomnych były wypisywane przez program uruchamiany przez funkcję **execlp**.
 Nazwę programu do uruchomienia przekazywać przez argumenty programu procesu macierzystego.\
 *-> Ile procesów powstanie przy n-krotnym wywołaniu funkcji for-exec jak wyżej i dlaczego?*
 

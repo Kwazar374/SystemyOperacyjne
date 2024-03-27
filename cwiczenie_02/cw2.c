@@ -7,8 +7,6 @@
 int main(int argc, char *argv[]) {
 	int stat_loc = 0;
 
-	execl(argv[1], argv[1], NULL);
-
 	for (int i = 0; i < 3; ++i) {
 		switch (fork())
 		{
@@ -29,5 +27,7 @@ int main(int argc, char *argv[]) {
 
 		}
 	}
-	return 0;
+	
+	printf("\nProces macierzysty:\n");
+	execl(argv[1], argv[1], NULL);
 }

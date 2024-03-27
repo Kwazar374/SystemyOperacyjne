@@ -10,7 +10,7 @@ int main()
 	pid_t PPID = getppid();
 	pid_t PGID = getpgrp();
 
-	printf("\nUID: %d / GID: %d / PID: %d / PPID: %d / PGID: %d\n\n",
+	printf("UID: %d / GID: %d / PID: %d / PPID: %d / PGID: %d\n",
 			UID, GID, PID, PPID, PGID);
 
 	return 0;

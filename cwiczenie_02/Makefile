@@ -9,7 +9,7 @@ SYSNAME = $(shell uname -s)
 
 # Nazwy
 # Rdzenie nazw plikow
-NAME_CW2 = CW2
+NAME_CW2 = cw2
 NAME_WYP = funkcja_wypisujaca
 # Program wykonawczy
 EXEC_CW2 = $(NAME_CW2).x
@@ -45,13 +45,13 @@ $(EXEC_CW2) : $(OBJS_CW2) $(LIBS_CW2)
 	$(LD) -o $@ $(LFLAGS) $^
 
 $(EXEC_WYP) : $(OBJS_WYP) $(LIBS_WYP)
-	$(LD) -o $@ (LFLAGS) $^
+	$(LD) -o $@ $(LFLAGS) $^
 
 .PHONY: run_cw2 run_wyp
 # Uruchom program $(EXEC_CW2); najpierw sprawdz, czy kod
 # wykonawczy jest aktualny
-run_cw2: $(EXEC_TEST)
-	./$(EXEC_TEST)
+run_cw2: $(EXEC_CW2) $(EXEC_WYP)
+	./$(EXEC_CW2) $(EXEC_WYP)
 
 run_wyp: $(EXEC_WYP)
 	./$(EXEC_WYP)
